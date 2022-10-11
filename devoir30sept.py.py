@@ -15,10 +15,36 @@ a=10
 b=20
 c=50
 i=(a+b+c)/3
-if i<40000:
+if (i> 0) and (i<40000):
     print(i)
 else:
     print("too bad")
+
+
+#autre solution
+while True:
+    a=int(input("Entrez un premier nombre"))
+    if a> 0 and a<40000:
+        break #le break sert a sortir de la boucle cad si les conditions du if ne sont pas remplies, sortir de la boucle et aller au print
+    print("le nombre n'est pas valide")
+b=int(input("Entrez un deuxième nombre"))
+c=int(input("Entrez un troisième nombre"))
+total_notes = 3
+moyenne =(a+b+c)/ total_notes
+
+
+#autre solution en utilisant une liste
+a=b=c=0
+somme=moyenne=0
+liste=[a,b,c]
+for indice in range (0,3):
+    while True:
+        liste[indice]=int(input("Entrez un nombre"))
+        if (liste[indice] > 0 and liste[indice]<40000):
+            somme+=(liste[indice])
+            break #le break sert a sortir de la boucle cad si les conditions du if ne sont pas remplies, sortir de la boucle et aller au print
+        print("le nombre n'est pas valide")
+
 
 # test d'une solution : for i in range(0,40000): pas de boucle for et in range car déroule tous les nombres jusqu'à 40000
 #   print (i)
@@ -43,6 +69,7 @@ if nombreDivisible == 0:
     print("ce nombre est divisible par 3")
 else:
     print("ce nombre n'est pas divisible par 3")
+
 
 
 #Exo 4: Écrire un programme qui détermine la valeur de la racine carrée d’un entier sans 
@@ -79,3 +106,13 @@ while a<n:
     if y-x ==0.001:
         continue
     print(x)
+
+n = float(input("saisir un nombre"))
+bas = 0.0
+haut = n
+moyenne = (haut+bas)/2
+while ((haut-bas) > 0.001):
+    if (moyenne * moyenne > n):
+        haut = moyenne
+    else(moyenne * moyenne<n):
+        bas = moyenne
