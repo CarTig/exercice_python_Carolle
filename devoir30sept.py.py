@@ -9,8 +9,6 @@
 #Pour i <- jusqu’à 40000
 #Ecrire i 
 
-#code python
-from tkinter import Y
 
 #ci dessous solution exo1
 a=10
